@@ -1,4 +1,4 @@
-$("#search").keyup(function (e) {
+$("#search").on('keyup', function (e) {
     // Appel api MapBox
     var settingsMapbox = {
         url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${$("#search").val()}.json?types=place%2Cpostcode%2Caddress%2Cregion%2Cdistrict&language=fr&access_token=pk.eyJ1IjoibWFyY3lhbm5pY2siLCJhIjoiY2xhODdyZWswMDE2azNwbHZ3NjE3djhraiJ9.oati14hnpLbT5TRYK84T_w`,
@@ -26,11 +26,11 @@ $("#search").keyup(function (e) {
                     </span>
                 </li>`
             );
-            id += 1
+            id++
         });
 
         //Proposition cliquée
-        $("li").click(function (e) {
+        $("li").on('click', function (e) {
             $(".search-results").empty();
             const locationIndex = e.target.id[e.target.id.length - 1]
 
