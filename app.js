@@ -110,7 +110,28 @@ $("#search").on('keyup', function () {
     axios(settingsMapbox)
     .then(function (response) {
         var data = response.data.features;
+    $.ajax(settingsMapbox).done(function (response) {
+        const data = response.features;
 
+        // Proposition recherche
+        $(".search-results").empty();
+        let id = 0
+        data.forEach((element) => {
+            const secondText = element.place_name_fr.split(',')
+            secondText.shift()
+            $(".search-results").append(
+                `<li id="search-result${id}" class="search-result list-none hover:bg-gray-200 cursor-pointer py-2">
+                    <span id="first-text${id}" class="first-text">
+                        ${element.text_fr}
+                    </span>
+                    <br>
+                    <span id="second-text${id}" class="second-text">
+                        ${secondText.toString()}
+                    </span>
+                </li>`
+            );
+            id += 1
+        });
         // Propositions recherche
         DisplaySearhItems(data);
 
@@ -123,6 +144,7 @@ $("#search").on('keyup', function () {
             
             const lat = data[locationIndex].geometry.coordinates[1]
             const lon = data[locationIndex].geometry.coordinates[0]
+            console.log(lat, lon)
             const cityname = data[locationIndex].text_fr
 
             $(".weather-data").empty()
@@ -149,7 +171,6 @@ $("#search").on('keyup', function () {
                 "method": "GET",
                 "timeout": 0,
             };
-
             axios(settings5days)
             .then(function (response) {
                 $(".center .bottom").append(
@@ -165,8 +186,8 @@ $("#search").on('keyup', function () {
                             <option value="pressure">Pression</option>
                         </select>
                     </div>
-                    <i class="fa-solid fa-chevron-left text-2xl absolute top-2/4 left-0 text-gray-200 cursor-pointer"></i>
-                    <i class="fa-solid fa-chevron-right text-2xl absolute top-2/4 right-0 text-gray-200 cursor-pointer"></i>
+                    <i class="fa-solid fa-chevron-left text-2xl absolute top-2/4 left-0 text-gray-300 cursor-pointer hover:text-blue-500"></i>
+                    <i class="fa-solid fa-chevron-right text-2xl absolute top-2/4 right-0 text-gray-300 cursor-pointer hover:text-blue-500"></i>
                     <canvas id="myChart" width="270" height="90" class="chart bg-gray-50 rounded">
                     </canvas>
                     `
