@@ -4,6 +4,9 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌥️🌤️🌦️🌧️</text></svg>">
+        <!-- Axios -->
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.2.1/dist/axios.min.js"></script>
         <!-- Jquery -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js"></script>
         <!-- Chart JS -->
@@ -20,7 +23,6 @@
         />
         <!-- Script -->
         <script src="app.js" type="module" defer></script>
-        <script src="function.js" type="module" defer></script>
         <title>Météo App</title>
     </head>
     <body class="text-center h-screen">
@@ -31,21 +33,21 @@
                 >
                     <div class="pages flex flex-col items-start gap-5">
                         <a
-                            href="#"
+                            href="/"
                             class="text-2xl text-blue-600 hover:text-blue-600"
                         >
                             <i class="fa-regular fa-house mr-2.5"></i>
                             <span class="font-medium text-sm">Acceuil</span>
                         </a>
                         <a
-                            href="#"
+                            href="favoris.php"
                             class="text-2xl text-gray-400 hover:text-blue-600"
                         >
                             <i class="fa-light fa-heart mr-2.5"></i>
                             <span class="font-medium text-sm">Favoris</span>
                         </a>
                         <a
-                            href="#"
+                            href="profil.php"
                             class="text-2xl text-gray-400 hover:text-blue-600"
                         >
                             <i class="fa-light fa-user mr-2.5"></i>
@@ -54,7 +56,7 @@
                     </div>
                     <div class="logout">
                         <a
-                            href="#"
+                            href="logout.php"
                             class="text-lg text-gray-400 hover:text-blue-600"
                         >
                             <i
@@ -93,11 +95,16 @@
                         </div>
                     </nav>
                 </header>
-                <div class="grid grid-cols-2 gap-5 weather-data current-weather">
-
+                <div>
+                    <div class="top weather-data grid grid-cols-2 gap-5 mb-10">
+                        
+                    </div>
+                    <div class="bottom weather-data relative">
+                        
+                    </div>
                 </div>
             </div>
-            <div class="right col-span-3 weather-data text-center p-5">
+            <div class="right overflow-y-auto col-span-3 weather-data text-center p-5">
 
             </div>
         </div>
