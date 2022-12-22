@@ -1,8 +1,11 @@
 <?php
 session_start();
+include_once("config/PDO.php");
+
 if (!isset($_SESSION['user_id-logged'])) {
     header('location: login.php');
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,7 +31,7 @@ if (!isset($_SESSION['user_id-logged'])) {
             href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
         />
         <!-- Script -->
-        <script src="app.js" type="module" defer></script>
+        <script src="./js/app.js" type="module" defer></script>
         <title>Météo App</title>
     </head>
     <body class="h-screen">
