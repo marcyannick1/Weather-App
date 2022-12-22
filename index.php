@@ -6,7 +6,6 @@ if (!isset($_SESSION['user_id-logged'])) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<<<<<<< Updated upstream:index.html
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +22,6 @@ if (!isset($_SESSION['user_id-logged'])) {
     <div class="search-results">
     </div>
 </body>
-=======
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -152,5 +150,4 @@ if (!isset($_SESSION['user_id-logged'])) {
             outline: none;
         }
     </style>
->>>>>>> Stashed changes:index.php
 </html>
