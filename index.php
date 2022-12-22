@@ -31,9 +31,10 @@ if (!isset($_SESSION['user_id-logged'])) {
         <script src="app.js" type="module" defer></script>
         <title>Météo App</title>
     </head>
-    <body class="text-center h-screen">
+    <body class="h-screen">
         <div class="grid grid-cols-12 h-full app">
             <div class="left col-span-2 border-r-2 p-10 pt-24 bg-gray-100">
+                <span>Bonjour, <?=$_SESSION['username-logged']?></span>
                 <nav
                     class="h-full flex flex-col items-start justify-between gap-5"
                 >
