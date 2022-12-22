@@ -110,15 +110,16 @@ $("#search").on('keyup', function () {
     axios(settingsMapbox)
     .then(function (response) {
         var data = response.data.features;
-
         // Propositions recherche
         DisplaySearhItems(data);
 
         //Proposition cliquée
-        $("li").click(function (e) {
+        $("li").on('click', function (e) {
             $(".search-results").empty();
             const locationIndex = e.target.id[e.target.id.length - 1]
 
+            $("#search").val(data[locationIndex].place_name_fr)
+            
             const lat = data[locationIndex].geometry.coordinates[1]
             const lon = data[locationIndex].geometry.coordinates[0]
             const cityname = data[locationIndex].text_fr
@@ -147,7 +148,6 @@ $("#search").on('keyup', function () {
                 "method": "GET",
                 "timeout": 0,
             };
-
             axios(settings5days)
             .then(function (response) {
                 $(".center .bottom").append(
