@@ -5,7 +5,7 @@ navigator.geolocation.getCurrentPosition((position)=>{
     const lat = position.coords.latitude.toFixed(3)
     const lon = position.coords.longitude.toFixed(3)
 
-    DisplayCurrentWeather(lat, lon)
+    DisplayCurrentWeather(lat, lon, "", true)
 
     Display5daysWeather(lat, lon)
 }, ()=>{
@@ -38,7 +38,7 @@ $("#search").on('keyup', function () {
             $(".weather-data").empty()
 
             // Appel current API Weather
-            DisplayCurrentWeather(lat, lon, cityname, true)
+            DisplayCurrentWeather(lat, lon, cityname, false)
 
             // Appel 5 days API Weather
             Display5daysWeather(lat, lon)

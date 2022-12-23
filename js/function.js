@@ -130,7 +130,7 @@ export function ShowIcon(code){
     }
 }
 
-export function DisplayCurrentWeather(lat, lon, cityname, search) {
+export function DisplayCurrentWeather(lat, lon, cityname, isUserLocation) {
     var settingsCurrentWeather = {
         "url": `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=775b43c6cfc7dcb4ef93f452147deda1&lang=fr&units=metric`,
         "method": "GET",
@@ -140,7 +140,7 @@ export function DisplayCurrentWeather(lat, lon, cityname, search) {
     axios(settingsCurrentWeather)
     .then(function (response) {
         var data = response.data
-        if (cityname == null) {
+        if (cityname == "") {
             cityname = response.data.name
         }
 
@@ -220,7 +220,7 @@ export function DisplayCurrentWeather(lat, lon, cityname, search) {
                 </div>
             </div>`
         );
-        if (search == null) {
+        if (isUserLocation == true) {
             $(".cityname").before('<i class="fa-duotone fa-location-arrow mr-2"></i>');
         }
 

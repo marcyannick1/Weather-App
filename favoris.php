@@ -25,7 +25,7 @@ $favoris = $stmt->fetchAll();
             <?php $page = "favoris"; include_once('commons/sidenav.php') ?>
         </div>
         <div class="center overflow-y-auto col-span-7 border-r-2 p-5 relative">
-            <div class="top weather-data grid grid-cols-2 gap-5 mb-10">
+            <div class="grid grid-cols-2 gap-5 mb-10">
                 <h2 class="font-medium text-start col-span-full mt-12">
                     Vos favoris
                 </h2>
@@ -34,7 +34,7 @@ $favoris = $stmt->fetchAll();
                     <div class="icon flex flex-col items-center text-blue-600">
                     </div>
                     <div class="text text-start">
-                        <span class="text-gray-400"><?=$city['cityname']?></span><br>
+                        <span class="text-gray-400 cityname"><?=$city['cityname']?></span><br>
                         <span class="text-xl capitalize font-medium desc"></span>
                         <input type="hidden" name="lat" value="<?=$city['latitude']?>">
                         <input type="hidden" name="lon" value="<?=$city['longitude']?>">
@@ -45,10 +45,35 @@ $favoris = $stmt->fetchAll();
                 </div>
                 <?php endforeach?>
             </div>
+            <div class="top grid gap-5 mb-10">
+
+            </div>
+            <div class="bottom weather-data relative">
+                        
+            </div>
         </div>
         <div class="right overflow-y-auto col-span-3 weather-data text-center p-5">
 
         </div>
     </div>
 </body>
+<!-- Style -->
+<style>
+    .right {
+        background: linear-gradient(
+            176deg,
+            rgb(54 75 103) 0%,
+            rgb(32 59 98) 50%,
+            rgb(26 55 109) 100%
+        );
+        color: white;
+    }
+    .sunrise,
+    .sunset {
+        background: #274372 !important;
+    }
+    input {
+        outline: none;
+    }
+</style>
 </html>

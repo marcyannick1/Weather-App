@@ -1,4 +1,4 @@
-import { ShowIcon} from "./function.js";
+import { ShowIcon, DisplayCurrentWeather, Display5daysWeather} from "./function.js";
 
 const locations = $(".location")
 
@@ -22,7 +22,6 @@ for (let i = 0; i < locations.length; i++) {
     .then(function (response) {
         var data = response.data
 
-        console.log(data)
         const icon = data.weather[0].icon
         const description = data.weather[0].description
         const temperature = Math.round(data.main.temp)
@@ -39,3 +38,33 @@ for (let i = 0; i < locations.length; i++) {
         console.log(error);
     });
 }
+
+$(".location").click(function (e) {
+    const lat = e.target.querySelectorAll('input')[0].value
+    const lon = e.target.querySelectorAll('input')[1].value
+    const cityname = e.target.querySelector('.cityname').innerText
+    console.log(lat, lon, cityname)
+
+    $(".top").empty();
+    $(".weather-data").empty();
+    DisplayCurrentWeather(lat, lon, cityname)
+    Display5daysWeather(lat, lon)
+});
+
+$(".location .fa-heart").click(function (e) {
+    e.target.closest('.location').remove()
+
+    const lat = e.target.closest('.location').querySelector('input[name=lat]').value
+    const lon = e.target.closest('.location').querySelector('input[name=lon]').value
+    console.log(lat, lon)
+
+    const locationData = {
+        lat : lat,
+        lon : lon,
+    }
+    $.ajax({
+        method: 'POST',
+        url: 'add_favoris.php',
+        data: {locationData: JSON.stringify(locationData)}
+    })
+});
