@@ -1,11 +1,11 @@
-import { DisplaySearhItems, ShowIcon, WeatherChart, DisplayCurrentWeather, Display5daysWeather } from "./function.js";
+import { DisplaySearhItems, DisplayCurrentWeather, Display5daysWeather } from "./function.js";
 
 // Localisation utilisateur
 navigator.geolocation.getCurrentPosition((position)=>{
-    const lat = position.coords.latitude
-    const lon = position.coords.longitude
+    const lat = position.coords.latitude.toFixed(3)
+    const lon = position.coords.longitude.toFixed(3)
 
-    DisplayCurrentWeather(lat, lon, null)
+    DisplayCurrentWeather(lat, lon)
 
     Display5daysWeather(lat, lon)
 }, ()=>{
@@ -31,14 +31,14 @@ $("#search").on('keyup', function () {
 
             $("#search").val(data[locationIndex].place_name_fr)
             
-            const lat = data[locationIndex].geometry.coordinates[1]
-            const lon = data[locationIndex].geometry.coordinates[0]
+            const lat = data[locationIndex].geometry.coordinates[1].toFixed(3)
+            const lon = data[locationIndex].geometry.coordinates[0].toFixed(3)
             const cityname = data[locationIndex].text_fr
 
             $(".weather-data").empty()
 
             // Appel current API Weather
-            DisplayCurrentWeather(lat, lon, cityname)
+            DisplayCurrentWeather(lat, lon, cityname, true)
 
             // Appel 5 days API Weather
             Display5daysWeather(lat, lon)

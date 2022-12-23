@@ -12,6 +12,9 @@ if(isset($_POST['locationData'])){
     }else{
         $_SESSION['isFavoris'] = ['isFavoris' => true];
     }
+
+    echo "<pre>", print_r($post), "</pre>";
+    echo $fav_check->rowCount();
 }
 
 header("Content-Type: application/json");

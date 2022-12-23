@@ -14,9 +14,11 @@ if(isset($_POST['locationData'])){
     if($stmt->rowCount() == 0){
         $insert = $db->prepare("INSERT INTO favoris(latitude, longitude, cityname, users_user_id) VALUES (?, ?, ?, ?)");
         $insert->execute([$lat, $lon, $cityname, $_SESSION['user_id-logged']]);
+        echo 'pas fav';
     }else{
         $delete = $db->prepare("DELETE FROM favoris WHERE latitude = ? AND longitude = ? AND users_user_id = ?");
         $delete->execute([$lat, $lon, $_SESSION['user_id-logged']]);
+        echo 'fav';
     }
 }
 ?>

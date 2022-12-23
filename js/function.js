@@ -130,7 +130,7 @@ export function ShowIcon(code){
     }
 }
 
-export function DisplayCurrentWeather(lat, lon, cityname) {
+export function DisplayCurrentWeather(lat, lon, cityname, search) {
     var settingsCurrentWeather = {
         "url": `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=775b43c6cfc7dcb4ef93f452147deda1&lang=fr&units=metric`,
         "method": "GET",
@@ -197,8 +197,8 @@ export function DisplayCurrentWeather(lat, lon, cityname) {
         // Right
         $(".right.weather-data").append(
             `
-            <span class="text-2xl font-medium text-center">${cityname}</span>
-            <div class="icon text-center mb-5">
+            <span class="text-2xl font-medium text-center cityname">${cityname}</span>
+            <div class="icon text-center my-5">
                 <i class="${ShowIcon(icon)} text-7xl"></i> 
                 <span class="text-2xl font-medium capitalize block">${description}</span>
             </div>
@@ -220,6 +220,9 @@ export function DisplayCurrentWeather(lat, lon, cityname) {
                 </div>
             </div>`
         );
+        if (search == null) {
+            $(".cityname").before('<i class="fa-duotone fa-location-arrow mr-2"></i>');
+        }
 
         // Favoris
         const locationData = {
@@ -239,13 +242,12 @@ export function DisplayCurrentWeather(lat, lon, cityname) {
             url: "check_fav.php"
         }).then(function (response){
             if (response.data.isFavoris) {
-                $(".right .icon").before('<i class="fa-solid fa-heart text-xl mb-5 ml-2.5 cursor-pointer"></i>');
+                $(".right .icon").before('<i class="fa-solid fa-heart text-xl ml-2.5 cursor-pointer"></i>');
             } else {
-                $(".right .icon").before('<i class="fa-regular fa-heart text-xl mb-5 ml-2.5 cursor-pointer"></i>');
+                $(".right .icon").before('<i class="fa-regular fa-heart text-xl ml-2.5 cursor-pointer"></i>');
             }
 
-            $('.right .fa-heart').click(function () { 
-                console.log('heart')
+            $('.right .fa-heart').click(function () {
                 $('.right .fa-heart').toggleClass('fa-regular');
                 $('.right .fa-heart').toggleClass('fa-solid');
                 
