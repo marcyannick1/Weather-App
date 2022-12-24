@@ -337,20 +337,6 @@ export function Display5daysWeather(lat, lon) {
             )
             WeatherChart(type, nb, list)
         });
-        // list.forEach(element => {
-        //     console.log(element)
-        //     $(".right .5days").append(
-        //         `
-        //         <div class="sunset text-start flex items-center bg-gray-50 px-2.5 py-4 rounded">
-        //         <i class="${ShowIcon(element.weather[0].icon)}"></i>
-        //         <div class="text">
-        //             <span>${moment(element.dt * 1000).calendar()}</span><br>
-        //             <span class="text-2xl font-bold"></span>
-        //         </div>
-        //         </div>
-        //         `
-        //     );
-        // });
     })
     .catch(function (error) {
         console.log(error);

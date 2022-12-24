@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_id-logged'])) {
             <div class="left col-span-2 border-r-2 p-8 pt-24 bg-gray-100 max-lg:hidden">
                 <?php include_once('commons/nav.php') ?>
             </div>
-            <div class="center overflow-y-auto col-span-7 border-r-2 p-5 relative max-lg:col-span-8 max-lg:mb-14">
+            <div class="center overflow-y-auto col-span-7 border-r-2 p-5 relative max-lg:col-span-8">
                 <header>
                     <nav class="h-12 max-[364px]:relative">
                         <div
@@ -56,7 +56,7 @@ if (!isset($_SESSION['user_id-logged'])) {
                     <div class="top weather-data grid grid-cols-2 gap-5">
                         
                     </div>
-                    <div class="bottom weather-data relative mt-10">
+                    <div class="bottom weather-data relative mt-10 max-lg:mb-14">
                         
                     </div>
                 </div>

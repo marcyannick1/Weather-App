@@ -2,8 +2,6 @@
 session_start();
 include_once("config/PDO.php");
 
-// echo "<pre>", print_r($_SERVER), "</pre>";
-
 if (isset($_POST['email-verify'])) {
     $_SESSION['email'] = $email = $_POST['email'];
 
@@ -87,8 +85,7 @@ if (isset($_POST['email-verify'])) {
         "content": [
             {
             "type": "text/plain",
-            "value": "Voilà votre lien : password_change?uniqid=<?=$uniqid?>"
-                
+            "value": "Voilà votre lien : password_change.php?uniqid=<?=$uniqid?>"
             }
         ]
         });

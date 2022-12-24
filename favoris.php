@@ -10,7 +10,6 @@ $stmt = $db->prepare("SELECT * FROM favoris WHERE users_user_id = ? ORDER BY fav
 $stmt->execute([$_SESSION['user_id-logged']]);
 
 $favoris = $stmt->fetchAll();
-// echo '<pre>', print_r($favoris), '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -52,7 +51,7 @@ $favoris = $stmt->fetchAll();
             <div class="top grid gap-5 mb-10">
 
             </div>
-            <div class="bottom weather-data relative">
+            <div class="bottom weather-data relative max-lg:mb-14">
                         
             </div>
         </div>
