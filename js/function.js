@@ -163,28 +163,28 @@ export function DisplayCurrentWeather(lat, lon, cityname, isUserLocation) {
         $(".center .top").append(
             `
             <h2 class="font-medium text-start col-span-full">Aperçu du Jour</h2>
-            <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1">
+            <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1 max-md:col-span-full">
                 <i class="fa-light fa-temperature-list text-3xl text-blue-500 mr-5"></i>
                 <div class="text text-start">
                     <span class="text-gray-400">Résenti</span><br>
                     <span class="text-2xl font-bold">${resenti}°C</span>
                 </div>
             </div>
-            <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1">
+            <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1 max-md:col-span-full">
                 <i class="fa-light fa-droplet-percent text-3xl text-blue-500 mr-5"></i>
                 <div class="text text-start">
                     <span class="text-gray-400">Taux d'humidité</span><br>
                     <span class="text-2xl font-bold">${humidity}%</span>
                 </div>
             </div>
-            <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1">
+            <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1 max-md:col-span-full">
                 <i class="fa-light fa-wind text-3xl text-blue-500 mr-5"></i>
                 <div class="text text-start">
                     <span class="text-gray-400">Vitesse du vent</span><br>
                     <span class="text-2xl font-bold">${windspeed} Km/h</span>
                 </div>
             </div>
-            <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1">
+            <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1 max-md:col-span-full">
                 <i class="fa-light fa-tire-pressure-warning text-3xl text-blue-500 mr-5"></i>
                 <div class="text text-start">
                     <span class="text-gray-400">Pression</span><br>
@@ -279,7 +279,7 @@ export function Display5daysWeather(lat, lon) {
                 <h2 class="font-medium text-start col-span-full">
                 Les 5 prochains Jours
                 </h2>
-                <select id="chart-type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/4">
+                <select id="chart-type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/4 max-md:w-2/4">
                     <option value="temperature">Température</option>
                     <option value="humidity">Taux d'humidité</option>
                     <option value="wind">Vitesse du vent</option>
@@ -339,13 +339,13 @@ export function Display5daysWeather(lat, lon) {
         });
         // list.forEach(element => {
         //     console.log(element)
-        //     $(".right").append(
+        //     $(".right .5days").append(
         //         `
         //         <div class="sunset text-start flex items-center bg-gray-50 px-2.5 py-4 rounded">
         //         <i class="${ShowIcon(element.weather[0].icon)}"></i>
         //         <div class="text">
-        //             <span>Couché du soleil</span><br>
-        //             <span class="text-2xl font-bold">${moment(element.dt * 1000).calendar()}</span>
+        //             <span>${moment(element.dt * 1000).calendar()}</span><br>
+        //             <span class="text-2xl font-bold"></span>
         //         </div>
         //         </div>
         //         `

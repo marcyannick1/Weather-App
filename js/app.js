@@ -49,8 +49,3 @@ $("#search").on('keyup', function () {
         console.log(error); 
     });
 });
-
-// window.location.href = "http://www.gorissen.info/Pierre/maps/googleMapLocation.php?lat=1";
-// var url = new URL(window.location);
-// var c = url.searchParams.get("h");
-// console.log(c);

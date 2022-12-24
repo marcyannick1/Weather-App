@@ -59,7 +59,7 @@ if(isset($_SESSION['email-logged'])){
 
                         </div>
                         <div class="flex items-center justify-between">
-                            <a href="#" class="text-sm font-medium text-blue-500 hover:underline dark:text-primary-500">Mot de passe oublié?</a>
+                            <a href="password_forgot.php" class="text-sm font-medium text-blue-500 hover:underline dark:text-primary-500">Mot de passe oublié?</a>
                         </div>
                         <?php if (isset($error)) : ?>
                             <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">

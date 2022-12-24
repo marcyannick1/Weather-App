@@ -2,6 +2,16 @@ import { ShowIcon, DisplayCurrentWeather, Display5daysWeather} from "./function.
 
 const locations = $(".location")
 
+// Afficher la mété du dernier favoris
+console.log(locations[0])
+const inputsHide = locations[0].querySelectorAll('input')
+
+const lat = inputsHide[0].value
+const lon = inputsHide[1].value
+const cityname = locations[0].querySelector('.cityname').innerText
+DisplayCurrentWeather(lat, lon, cityname)
+Display5daysWeather(lat, lon)
+
 for (let i = 0; i < locations.length; i++) {
     const location = locations[i];
     
@@ -40,15 +50,17 @@ for (let i = 0; i < locations.length; i++) {
 }
 
 $(".location").click(function (e) {
-    const lat = e.target.querySelectorAll('input')[0].value
-    const lon = e.target.querySelectorAll('input')[1].value
-    const cityname = e.target.querySelector('.cityname').innerText
-    console.log(lat, lon, cityname)
-
-    $(".top").empty();
-    $(".weather-data").empty();
-    DisplayCurrentWeather(lat, lon, cityname)
-    Display5daysWeather(lat, lon)
+    if(e.target.nodeName != "I"){
+        const lat = e.target.closest('.location').querySelectorAll('input')[0].value
+        const lon = e.target.closest('.location').querySelectorAll('input')[1].value
+        const cityname = e.target.closest('.location').querySelector('.cityname').innerText
+        console.log(lat, lon, cityname)
+    
+        $(".top").empty();
+        $(".weather-data").empty();
+        DisplayCurrentWeather(lat, lon, cityname)
+        Display5daysWeather(lat, lon)
+    }
 });
 
 $(".location .fa-heart").click(function (e) {

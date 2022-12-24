@@ -15,27 +15,31 @@ $favoris = $stmt->fetchAll();
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include_once('commons/head.php') ?>
+    <?php
+    include_once('commons/head.php');
+    $page = "favoris"
+    ?>
     <script src="./js/favoris.js" type="module" defer></script>
     <title>Favoris</title>
 </head>
 <body class="h-screen">
-    <div class="grid grid-cols-12 h-full app">
-        <div class="left col-span-2 border-r-2 p-10 pt-24 bg-gray-100">
-            <?php $page = "favoris"; include_once('commons/sidenav.php') ?>
+    <?php include_once('commons/sm-nav.php') ?>
+    <div class="grid grid-cols-12 h-full app max-md:flex flex-col-reverse max-md:h-auto">
+        <div class="left col-span-2 border-r-2 p-8 pt-24 bg-gray-100 max-lg:hidden">
+            <?php include_once('commons/nav.php') ?>
         </div>
-        <div class="center overflow-y-auto col-span-7 border-r-2 p-5 relative">
+        <div class="center overflow-y-auto col-span-7 border-r-2 p-5 relative max-lg:col-span-8">
             <div class="grid grid-cols-2 gap-5 mb-10">
                 <h2 class="font-medium text-start col-span-full mt-12">
                     Vos favoris
                 </h2>
                 <?php foreach ($favoris as $city):?>
-                <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1 gap-5 location cursor-pointer hover:bg-gray-100">
+                <div class="flex items-center bg-gray-50 px-2.5 py-4 rounded col-span-1 gap-5 location cursor-pointer hover:bg-gray-100 max-lg:col-span-full max-md:col-span-full max-sm:col-span">
                     <div class="icon flex flex-col items-center text-blue-600">
                     </div>
                     <div class="text text-start">
                         <span class="text-gray-400 cityname"><?=$city['cityname']?></span><br>
-                        <span class="text-xl capitalize font-medium desc"></span>
+                        <span class="text-xl capitalize font-medium desc max-sm:text-base"></span>
                         <input type="hidden" name="lat" value="<?=$city['latitude']?>">
                         <input type="hidden" name="lon" value="<?=$city['longitude']?>">
                     </div>
@@ -52,7 +56,7 @@ $favoris = $stmt->fetchAll();
                         
             </div>
         </div>
-        <div class="right overflow-y-auto col-span-3 weather-data text-center p-5">
+        <div class="right overflow-y-auto col-span-3 weather-data text-center p-5 max-lg:col-span-4">
 
         </div>
     </div>

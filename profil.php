@@ -15,8 +15,8 @@ if (!isset($_SESSION['user_id-logged'])) {
 </head>
 <body class="h-screen">
         <div class="grid grid-cols-12 h-full app">
-            <div class="left col-span-2 border-r-2 p-10 pt-24 bg-gray-100">
-                <?php $page = "profil"; include_once('commons/sidenav.php') ?>
+            <div class="left col-span-2 border-r-2 p-8 pt-24 bg-gray-100">
+                <?php $page = "profil"; include_once('commons/nav.php') ?>
             </div>
             <div class="center overflow-y-auto col-span-7 border-r-2 p-5 relative">
 
