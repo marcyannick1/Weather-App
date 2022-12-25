@@ -132,7 +132,7 @@ export function ShowIcon(code){
 
 export function DisplayCurrentWeather(lat, lon, cityname, isUserLocation) {
     var settingsCurrentWeather = {
-        "url": `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=775b43c6cfc7dcb4ef93f452147deda1&lang=fr&units=metric`,
+        "url": `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPENWEATHERID}&lang=fr&units=metric`,
         "method": "GET",
         "timeout": 0,
     };
@@ -267,7 +267,7 @@ export function DisplayCurrentWeather(lat, lon, cityname, isUserLocation) {
 
 export function Display5daysWeather(lat, lon) {
     var settings5days = {
-        "url": `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=775b43c6cfc7dcb4ef93f452147deda1&units=metric&lang=fr`,
+        "url": `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${OPENWEATHERID}&units=metric&lang=fr`,
         "method": "GET",
         "timeout": 0,
     };

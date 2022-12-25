@@ -1,4 +1,4 @@
-<nav class="hidden fixed w-full z-50 shadow-lg bg-white bottom-0 flex items-center justify-evenly gap-5 h-16 max-lg:flex">
+<nav class="sm-nav hidden bg-gray-100 fixed w-full z-50 bg-white bottom-0 flex items-center justify-evenly gap-5 h-16 max-lg:flex">
     <a
         href="index.php"
         class="text-2xl flex flex-col items-center <?php if ($page == "/") {echo "text-blue-600";}else{echo "text-gray-400";}?> hover:text-blue-600"
@@ -23,3 +23,8 @@
         <span class="font-medium text-sm">Déconnexion</span>
     </a>
 </nav>
+<style>
+    nav.sm-nav{
+        box-shadow: 0px 2px 20px -1px rgb(0 0 0 / 30%);
+    }
+</style>

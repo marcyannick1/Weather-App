@@ -15,7 +15,7 @@ navigator.geolocation.getCurrentPosition((position)=>{
 $("#search").on('keyup', function () {
     // Appel api MapBox
     var settingsMapbox = {
-        url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${$("#search").val()}.json?types=place%2Cpostcode%2Caddress%2Cregion%2Cdistrict&language=fr&access_token=pk.eyJ1IjoibWFyY3lhbm5pY2siLCJhIjoiY2xhODdyZWswMDE2azNwbHZ3NjE3djhraiJ9.oati14hnpLbT5TRYK84T_w`,
+        url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${$("#search").val()}.json?types=place%2Cpostcode%2Caddress%2Cregion%2Cdistrict&language=fr&access_token=${MAPBOX_TOKEN}`,
         method: "GET",
         timeout: 0,
     };

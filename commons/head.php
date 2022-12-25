@@ -18,3 +18,4 @@
     rel="stylesheet"
     href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
 />
+<script src=".env.js"></script>
