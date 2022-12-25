@@ -25,6 +25,6 @@
 </nav>
 <style>
     nav.sm-nav{
-        box-shadow: 0px 2px 20px -1px rgb(0 0 0 / 30%);
+        box-shadow: 0px 2px 10px -1px rgb(0 0 0 / 30%);
     }
 </style>

@@ -94,7 +94,7 @@ if (isset($_POST['email-verify'])) {
         method: 'post',
         url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
         headers: { 
-            'X-RapidAPI-Key': 'e9e9ebcdb7msh01cbf9826a22a1dp14199fjsn9a8ecadc45cb', 
+            'X-RapidAPI-Key': `${RAPID_API_KEY}`, 
             'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com', 
             'content-type': 'application/json'
         },
