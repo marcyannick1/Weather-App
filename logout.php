@@ -2,7 +2,7 @@
 session_start();
 session_destroy();
 
-header('refresh:1; url=login.php')
+header('refresh:1; url=index.php')
 ?>
 <!DOCTYPE html>
 <html lang="fr">
