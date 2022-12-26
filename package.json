@@ -1,0 +1,22 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Weather app with JavaScript and PHP.\r ## Configuration\r Clone down this repository.  You will need a local server on your machine like :\r <a href=\"https://www.wampserver.com/\">`WAMP`</a>, <a href=\"https://www.mamp.info/en/downloads/\"> `MAMP`</a> or <a href=\"https://www.apachefriends.org/fr/index.html\"> `XAMPP`</a>",
+  "main": "./js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcyannick1/Weather-App.git"
+  },
+  "author": "Marc Yannick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcyannick1/Weather-App/issues"
+  },
+  "homepage": "https://github.com/marcyannick1/Weather-App#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}

@@ -11,11 +11,10 @@
 <!-- Moment JS -->
 <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/locale/fr.js"></script>
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
 <!-- FontAwesome -->
 <link
     rel="stylesheet"
     href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
 />
+<link rel="stylesheet" href="dist/output.css">
 <script src=".env.js"></script>
