@@ -1,11 +1,6 @@
 <?php
 session_start();
 include_once("config/PDO.php");
-
-if (!isset($_SESSION['user_id-logged'])) {
-    header('location: login.php');
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,7 +19,7 @@ if (!isset($_SESSION['user_id-logged'])) {
             <div class="left col-span-2 border-r-2 p-8 pt-24 bg-gray-100 max-lg:hidden">
                 <?php include_once('commons/nav.php') ?>
             </div>
-            <div class="center overflow-y-auto col-span-7 border-r-2 p-5 relative max-lg:col-span-8">
+            <div class="center overflow-y-auto col-span-7 border-r-2 p-5 relative max-lg:col-span-8 max-md:overflow-y-visible">
                 <header>
                     <nav class="h-12 max-[364px]:relative">
                         <div
@@ -42,7 +37,7 @@ if (!isset($_SESSION['user_id-logged'])) {
                                     <input
                                         type="text"
                                         id="search"
-                                        class="bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-ellipsis"
+                                        class="bg-white border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 text-ellipsis"
                                         placeholder="Entrez une ville"
                                         autocomplete="off"
                                     />

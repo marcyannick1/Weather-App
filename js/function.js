@@ -74,7 +74,7 @@ export function WeatherChart(type, labelsNb, list ) {
         animation: true,
         y: {
             suggestedMin: Math.min(...temp) - 5,
-            suggestedMax: Math.max(...temp) + 10
+            suggestedMax: Math.max(...temp) + 5
           }
     }
 
@@ -279,7 +279,7 @@ export function Display5daysWeather(lat, lon) {
                 <h2 class="font-medium text-start col-span-full">
                 Les 5 prochains Jours
                 </h2>
-                <select id="chart-type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/4 max-md:w-2/4">
+                <select id="chart-type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 w-1/4 max-md:w-2/4">
                     <option value="temperature">Température</option>
                     <option value="humidity">Taux d'humidité</option>
                     <option value="wind">Vitesse du vent</option>
@@ -307,12 +307,13 @@ export function Display5daysWeather(lat, lon) {
                 `
             )
             type = $('#chart-type').val()
-            WeatherChart(type, 5, list)
+            WeatherChart(type, nb, list)
         });
         $(".fa-chevron-left").click(function () {
+            console.log(list.length)
             nb -= 5
             if (nb < 5) {
-                nb = 40
+                nb = list.length
             }
             $("#myChart").remove();
             $(".center .bottom").append(
@@ -325,7 +326,7 @@ export function Display5daysWeather(lat, lon) {
         });
         $(".fa-chevron-right").click(function () {
             nb += 5
-            if (nb > 40) {
+            if (nb > list.length) {
                 nb = 5
             }
             $("#myChart").remove();
