@@ -1,5 +1,7 @@
 # Weather-App
 Weather app with JavaScript(Jquery, ChartJS, MomentJS) and PHP.
+## Screenshots
+![enter image description here](https://marcyannick.com/images/Portfolio/weather-app.jpg)
 ## Configuration
 Clone down this repository.  You will need a local server on your machine like :
 <a href="https://www.wampserver.com/">`WAMP`</a>, <a href="https://www.mamp.info/en/downloads/"> `MAMP`</a> or <a href="https://www.apachefriends.org/fr/index.html"> `XAMPP`</a> 
